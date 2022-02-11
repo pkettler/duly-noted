@@ -5,8 +5,8 @@ function App() {
   return (
     <div className="App">
       <NoteListPage />
-    </div> 
+    </div>
   );
 }
 
-export default App; 
+export default App;
