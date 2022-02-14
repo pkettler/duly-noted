@@ -1,8 +1,6 @@
-import dayjs from "dayjs";
 import React, { useState } from "react";
 import ReactMarkdown from 'react-markdown';
-import relativeTime from 'dayjs/plugin/relativeTime';
-dayjs.extend(relativeTime);
+import formatDate from "../util/formatDate";
 
 
 export default function NoteListItem(props) {
@@ -21,11 +19,14 @@ export default function NoteListItem(props) {
         truncatedText = text;
     }
 
-    function formatDate (date) {
-        if (date >= Date.now() - (7 * 24 * 60 * 60 * 1000)) {
-            return dayjs(date).fromNow();
+    const addDefaultText = (text) => {
+        let textToTrim = text.trim(text);
+        if ( textToTrim === "" ) {
+           return textToTrim = "No Note Text";
+        } else if (textToTrim === " ") {
+            return textToTrim = "No Note Text";
         } else {
-            return dayjs(date).format("h:mm a on M/D/YYYY");
+            return textToTrim;
         }
     }
 
@@ -47,11 +48,12 @@ export default function NoteListItem(props) {
 
     return (
         <div className="noteListItem" onClick={handleListItemClick} >
-            <ReactMarkdown children={truncatedText} />
+            <ReactMarkdown children={addDefaultText(truncatedText)} />
             {formatDate(createdAt)} 
-        <p>
+            
+        {/* <p>
             I've been clicked { timesClicked } times
-        </p>
+        </p> */}
         </div>
     )
 }
