@@ -67,16 +67,6 @@ export default function NoteListPage(props) {
   const { t } = useTranslation();
   const notes = (data && data.notes) || [];
 
-  // const { createNote } = useNotes();
-  // const activeNotes = notes.filter((note) => note.isArchived !== true);
-
-  // let filteredNotes;
-  // if (showArchive) {
-  //   filteredNotes = notes.filter((note) => note.isArchived !== true);
-  // } else {
-  //   filteredNotes = notes;
-  // }
-
   const handleArchiveFilterClick = () => {
     setShowArchive(!showArchive);
   };

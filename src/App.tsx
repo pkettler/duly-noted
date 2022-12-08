@@ -29,22 +29,6 @@ import './App.css';
 
 setupIonicReact();
 
-// const App: React.FC = () => (
-//   <ApolloProvider client={apolloClient}>
-//       <NotesProvider>
-//         <IonApp>
-//           <IonReactRouter>
-//           <IonRouterOutlet>
-//           <Route exact path="/notes/edit/:id" component={NoteEditPageController} />
-//           <Route exact path="/notes" component={NoteListPage} />
-//           <Redirect exact from='/' to="/notes" />
-//           </IonRouterOutlet>
-//           </IonReactRouter>
-//         </IonApp>
-//       </NotesProvider>
-//   </ApolloProvider>
-
-// );
 function App(props: any) {
   return (
   <ApolloProvider client={props.apolloClient}>

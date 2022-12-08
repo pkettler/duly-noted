@@ -79,10 +79,8 @@ export default function NoteEditPageController() {
       },
     ],
   });
-  // const { notes, deleteNote, updateNote, archiveNote } = useNotes();
 
   const selectedNote = data && data.note;
-  // const selectedNote = notes.find((note) => note.id === id);
   if (!selectedNote) return null;
 
   //Save Note
@@ -94,7 +92,6 @@ export default function NoteEditPageController() {
           id: id,
         },
       });
-      history.goBack();
     } else {
       updateNote({
         variables: {
