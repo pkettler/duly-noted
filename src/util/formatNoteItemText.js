@@ -15,21 +15,3 @@ export default function formatNoteItemText(text) {
 
   return text;
 }
-//***************Moved from NoteListItem to ../util/formatNoteItemText  */
-// let truncatedText;
-// if (text.length > 200) {
-//   truncatedText = `${text.substr(0, 200)}...`;
-// } else {
-//   truncatedText = text;
-// }
-
-// const addDefaultText = (text) => {
-//   let textToTrim = text.trim(text);
-//   if (textToTrim === '') {
-//     return (textToTrim = 'No Note Text');
-//   } else if (textToTrim === ' ') {
-//     return (textToTrim = 'No Note Text');
-//   } else {
-//     return textToTrim;
-//   }
-// };
