@@ -86,10 +86,13 @@ export default function NoteListPage(props) {
   };
 
   let funnelStatus;
+  let filteredNotes;
   if (showArchive) {
     funnelStatus = funnel;
+    filteredNotes = notes.filter((note) => note.isArchived === true);
   } else {
     funnelStatus = funnelOutline;
+    filteredNotes = notes;
   }
   return (
     <IonPage>
@@ -100,12 +103,16 @@ export default function NoteListPage(props) {
               <IonIcon slot="icon-only" icon={funnelStatus} />
             </IonButton>
           </IonButtons>
-          <IonTitle class="title">{t('noteListPageTitle')}</IonTitle>
+          {!showArchive ? (
+            <IonTitle class="title">{t('noteListPageTitle')}</IonTitle>
+          ) : (
+            <IonTitle class="title">{t('Archived')}</IonTitle>
+          )}
         </IonToolbar>
       </IonHeader>
       <IonContent className="note-text">
         <IonList className="note-body">
-          {notes.map((note) => {
+          {filteredNotes.map((note) => {
             return (
               <NoteListItem
                 id={note.id}

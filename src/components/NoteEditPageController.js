@@ -102,7 +102,7 @@ export default function NoteEditPageController() {
           },
         },
       });
-      history.goBack();
+      this.props.history.push('/notes');
     }
   };
 
@@ -118,7 +118,7 @@ export default function NoteEditPageController() {
         },
       },
     });
-    history.goBack();
+    history.push('/notes');
   };
 
   // Delete Note
@@ -129,7 +129,7 @@ export default function NoteEditPageController() {
         id: id,
       },
     });
-    history.goBack();
+    this.props.history.push('/notes');
   };
 
   return (
