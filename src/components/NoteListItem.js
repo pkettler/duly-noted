@@ -9,7 +9,7 @@ export default function NoteListItem(props) {
   const { createdAt, id, onClick = () => {}, text } = props;
 
   return (
-    <IonItem onClick={() => onClick(id)}>
+    <IonItem onClick={() => onClick(id)} style={{ cursor: 'pointer' }}>
       <IonLabel class="note-body">
         <ReactMarkdown children={formatNoteItemText(text)} />
         <p>{formatDate(createdAt)}</p>

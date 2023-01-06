@@ -92,6 +92,17 @@ export default function NoteEditPageController() {
           id: id,
         },
       });
+    } else if (selectedNote.isArchived) {
+      updateNote({
+        variables: {
+          id: id,
+          note: {
+            isArchived: true,
+            text: newNoteText,
+          },
+        },
+      });
+      this.props.history.push('/notes');
     } else {
       updateNote({
         variables: {
