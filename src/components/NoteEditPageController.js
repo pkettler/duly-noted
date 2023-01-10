@@ -129,7 +129,8 @@ export default function NoteEditPageController() {
         },
       },
     });
-    history.push('/notes');
+
+    history.goBack();
   };
 
   // Delete Note

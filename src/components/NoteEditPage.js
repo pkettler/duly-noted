@@ -53,6 +53,7 @@ export default function NoteEditPage(props) {
           className={styles.textArea}
           value={value}
           onChange={(event) => setValue(event.target.value)}
+          autoComplete="off"
         />{' '}
         <br />
         <br />

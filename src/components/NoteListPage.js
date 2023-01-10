@@ -61,7 +61,7 @@ export default function NoteListPage(props) {
     variables: {
       includeArchived: showArchive,
     },
-    pollInterval: 5000,
+    pollInterval: 1000,
   });
   const history = useHistory();
   const { t } = useTranslation();
@@ -87,7 +87,7 @@ export default function NoteListPage(props) {
 
   let funnelStatus;
   let filteredNotes;
-  if (showArchive) {
+  if (showArchive === true) {
     funnelStatus = funnel;
     filteredNotes = notes.filter((note) => note.isArchived === true);
   } else {
