@@ -1,0 +1,23 @@
+name: Main
+
+on: push
+
+jobs:
+ lint-and-test:
+  runs-on: ubuntu-latest
+
+  steps:
+  - name: Check out files
+    uses: actions/checkout@v2
+  - name: Use Node.js 12.x
+    uses: actions/setup-node@v1
+    with:
+      node-version: 12.x
+  - name: Install package dependencies
+    run: npm ci
+  - name: Lint code
+    run: npm run lint --if-present
+  - name: Test code
+    run: npm test
+    env:
+      CI: true
